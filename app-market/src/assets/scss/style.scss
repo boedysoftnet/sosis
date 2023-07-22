@@ -1,0 +1,156 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media print {
+    .warna{
+        @apply bg-blue-500;
+    }
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 5px;
+    @apply rounded-full;
+    &:hover{
+       @apply cursor-pointer;
+    }
+  }
+}
+
+@layer base {
+  [type=text],
+  [type=password],
+  [type=check],
+  [type=date],
+  [type=datetime-local],
+  [type=number],
+  [type=email],
+  [type=file],
+  textarea,
+  select {
+    @apply transition duration-300 shadow focus:ring-basic-400 w-full py-1;
+  }
+
+  button {
+    @apply shadow border-b-2 border-gray-700 py-1 px-2;
+    &:hover {
+      @apply bg-yellow-500 transition duration-500 text-black;
+    }
+  }
+
+  h2.title {
+    @apply text-xl border-l-[5px] border-basic-500 pl-3;
+  }
+}
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+.dx-gridbase-container {
+  height: 380px;
+}
+
+.dx-datagrid {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.dx-datagrid-rowsview {
+  display: flex;
+  flex: 1;
+}
+
+.grid-500 {
+  .dx-gridbase-container {
+    height: 540px;
+  }
+}
+
+.grid-300 {
+  .dx-gridbase-container {
+    height: 300px;
+  }
+}
+
+.grid-fix {
+  @apply flex-1 flex;
+  .dx-gridbase-container {
+    @apply flex-1;
+  }
+}
+
+.grid-600 {
+  .dx-gridbase-container {
+    height: 600px;
+  }
+}
+
+.grid-700 {
+  .dx-gridbase-container {
+    height: 700px;
+  }
+}
+
+.grid-800 {
+  .dx-gridbase-container {
+    height: 800px;
+  }
+}
+
+.router-link-active {
+  @apply border-l-4 text-basic-500 px-2 font-semibold;
+}
+
+.active {
+}
+
+.exact-active-link {
+  @apply border-l-4 text-basic-500 px-2 font-semibold;
+}
+
+.boedysoft {
+  .title {
+    @apply font-semibold border-l-2 px-2 text-[18px] text-basic-700;
+  }
+
+}
+
+@media print {
+  //use your CSS over here customize your prints components.
+  ::v-deep .right-sidebar,
+  ::v-deep header {
+    display: none !important;
+  }
+  ::v-deep footer {
+    display: none !important;
+  }
+  #printMe{
+    @apply p-10;
+  }
+  table{
+    thead{
+      tr{
+        th{
+            @apply bg-gray-200 border border-gray-400;
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          @apply border border-gray-400;
+        }
+      }
+    }
+  }
+
+}
